@@ -46,8 +46,9 @@ const inputs = [
         Choices: ["Circle", "Square", "Triangle"]
     }
 ];
+
 // write to file system
-function writeFile(fileName, data) {
+function generateLogo(fileName, data) {
     console.log("Writing [" + data + "] to file [" + fileName + "]")
     fs.writeFile(fileName, data, function (err) {
         if (err) {
@@ -95,5 +96,19 @@ async function init() {
         console.log("User selected Triangle");
     }
     userShape.setColor(shapeColor)
+
+    // generate svg to file
+    var svg = new SVG();
+    svg.setElementText(userInput, fontColor);
+    svg.setElementShape(userShape);
+    svgString=svg.render();
+
+    // console log string once file has been written
+    console.log("Displaying Shape:\n\n" + svgString);
+    
+    // console log successful generation
+    console.log("Logo Generation Successful!")
+    generateLogo(svg_file, svgString)
 }
 
+init()
