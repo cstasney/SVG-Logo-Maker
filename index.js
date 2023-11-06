@@ -1,6 +1,6 @@
 // Import file system, fs, and shape modules
 
-const fs = require('fs')
+const fs = require('./node_modules/graceful-fs/graceful-fs')
 const inquirer = require("inquirer");
 const { Circle, Square, Triangle } = require("./lib/shapes");
 
@@ -43,7 +43,7 @@ const inputs = [
         type: "list",
         name: "shape",
         message: "Choose your shape",
-        Choices: ["Circle", "Square", "Triangle"]
+        choices: ["Circle", "Square", "Triangle"]
     }
 ];
 
@@ -65,11 +65,11 @@ async function init() {
     var svg_file = "logo.svg";
 
     // prompt user input
-    const answers = await inquirer.createPromptModule(inputs);
+    const answers = await inquirer.prompt(inputs);
 
     // user input
     var userInput = "";
-    if (answers.length > 0 && answers.text.length < 4) {
+    if (answers.text.length > 0 && answers.text.length < 4) {
         userInput = answers.text;
     } else {
         console.log("Your input must be 1-3 characters")
