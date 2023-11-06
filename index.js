@@ -21,3 +21,28 @@ class SVG {
         this.elementShape = shape.render()
     }
 }
+
+// Array of terminal prompts to create desired shape, color, and text
+const inputs = [
+    {
+        type: "input",
+        name: "text",
+        message: "Desired image text: Choose up to 3 characters"
+    },
+    { 
+        type: "input",
+        name: "text-color",
+        message: "Choose your font color by entering a color keyword or a hexadecimal"
+    },
+    {
+        type: "input",
+        name: "shape-color",
+        message: "Choose your shapes color by entering a color keyword or a hexadecimal"
+    },
+    {
+        type: "list",
+        name: "shape",
+        message: "Choose your shape",
+        Choices: ["Circle", "Square", "Triangle"]
+    }
+];
