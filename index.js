@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const inquirer = require("inquirer");
-const { Circle, Square, Triangle } = require("./shapes");
+const { Circle, Square, Triangle } = require("./lib/shapes");
 
 // SVG class constructor w/ 3 methods to render and set text in SVG string
 
@@ -76,11 +76,11 @@ async function init() {
         return;
     }
     console.log("Logo Text: [" + userInput + "]");
-    const fontColor = answers["text-color"];
+    var fontColor = answers["text-color"];
     console.log("Font color: [" + fontColor + "]");
-    const shapeColor = answers["shape-color"];
+    var shapeColor = answers["shape-color"];
     console.log("Shape Color: [" + shapeColor + "]");
-    const shape = answers["shape"];
+    var shape = answers["shape"];
     console.log("Shape: [" + shape + "]");
 
     // desired shape
