@@ -81,4 +81,19 @@ async function init() {
     console.log("Shape Color: [" + shapeColor + "]");
     const shape = answers["shape"];
     console.log("Shape: [" + shape + "]");
+
+    // desired shape
+    let userShape;
+    if (shape === "Square" || shape === "square" || shape === "SQAURE") {
+        userShape = new Square();
+        console.log("User selected Square")
+    } else if (shape === "Circle" || shape === "circle" || shape === "CIRCLE") {
+        userShape = new Circle();
+        console.log("User selected Circle");
+    } else if (shape === "Triangle" || shape === "triangle" || shape === "TRIANGLE") {
+        userShape = new Triangle();
+        console.log("User selected Triangle");
+    }
+    userShape.setColor(shapeColor)
 }
+
