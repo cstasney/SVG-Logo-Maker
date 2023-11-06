@@ -14,7 +14,7 @@
 
 ⬇️ The raw file containing a full movie demonstrating funcationality can be downloaded here ⬇️
 
-[Movie](src/video.webm)  
+[Movie](media/video.webm)  
 
 ### User Story
 
