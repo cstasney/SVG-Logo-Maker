@@ -1,8 +1,8 @@
 // Import file system, fs, and shape modules
 
-const fs = require('./node_modules/graceful-fs/graceful-fs')
+const fs = require('fs')
 const inquirer = require("inquirer");
-const { Circle, Square, Triangle } = require("./lib/shapes");
+const { Circle, Square, Triangle } = require("./shapes");
 
 // SVG class constructor w/ 3 methods to render and set text in SVG string
 
