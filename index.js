@@ -65,7 +65,7 @@ async function init() {
     var svg_file = "logo.svg";
 
     // prompt user input
-    const answers = await inquirer.createPromptModule(questions);
+    const answers = await inquirer.createPromptModule(inputs);
 
     // user input
     var userInput = "";
