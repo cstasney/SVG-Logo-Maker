@@ -46,3 +46,13 @@ const inputs = [
         Choices: ["Circle", "Square", "Triangle"]
     }
 ];
+// write to file system
+function writeFile(fileName, data) {
+    console.log("Writing [" + data + "] to file [" + fileName + "]")
+    fs.writeFile(fileName, data, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("Your logo has been generated!")
+    });
+}
